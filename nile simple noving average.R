@@ -9,12 +9,14 @@ Nile  # river flow from year 1871 to 1970
 plot(Nile)
 
 library(forecast)  # for forecasting
-opar = par(no.readonly = T)
-par(mfrow=c(2,2))
+opar = par(no.readonly = T) # save current parameters
+par(mfrow=c(2,2))  # mfrow is multiple frames per row and also mfcol which are also used for changing the numbering origin
+
 (ylim = range(Nile))
 plot(Nile, main='Original TS')
 head(Nile)
 ma(Nile,3)
+ma(Nile, 4) [1:15]
 head(Nile,4)
 head(ma(Nile,3))
 (1120+1160+963)/3
@@ -25,3 +27,11 @@ plot(ma(Nile,3), main='SMA k=3', ylim=ylim)
 plot(ma(Nile,7), main='SMA k=7', ylim=ylim)
 plot(ma(Nile,15),main='SMA k=15', ylim=ylim)
 par(opar)
+
+
+
+
+
+
+
+
